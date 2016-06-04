@@ -1,0 +1,21 @@
+#!/bin/bash
+# The original idea behind this script is to cat
+# through all of the files in the current working dir
+clear
+figlet Files
+
+#read -n 1 -r
+#
+#echo 
+#
+#if [[ $REPLY =~ ^[j]$ ]]
+#then
+#echo "next"
+#fi
+
+echo *
+
+for f in *
+## [[ ]] performs conditional expression on
+do [[ -d "$f" ]] || echo "$f"
+done
