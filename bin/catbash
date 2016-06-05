@@ -28,7 +28,15 @@ for f in *
 do [[ -f "$f" ]] && files+=($f)
 done
 
-for f in ${files[*]}
+#for f in ${files[*]}
+#do
+#  echo $f
+#done
+#echo ${files[*]}
+echo ${#files[*]}
+for ((i=0; i<${#files[*]}; i++))
 do
-  echo $f
+  echo "file number $i"
+  echo -e "\t ${files[i]}"
 done
+
