@@ -17,7 +17,6 @@ figlet Files
 #echo "next"
 #fi
 
-echo *
 
 for f in *
 ## [[ ]] performs conditional expression on $f
@@ -26,5 +25,10 @@ for f in *
 ## this tecnique keeps out directories
 #do [[ -d "$f" ]] || echo "$f"
 ## But this option will just allow regular files
-do [[ -f "$f" ]] && echo "$f"
+do [[ -f "$f" ]] && files+=($f)
+done
+
+for f in ${files[*]}
+do
+  echo $f
 done
