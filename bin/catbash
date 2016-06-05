@@ -1,6 +1,10 @@
 #!/bin/bash
 # The original idea behind this script is to cat
 # through all of the files in the current working dir
+
+
+# FEATURE: Write the current location to a .status file
+# FEATURE: Optiaions to override the default slides/ dir
 clear
 figlet Files
 
@@ -16,6 +20,11 @@ figlet Files
 echo *
 
 for f in *
-## [[ ]] performs conditional expression on
-do [[ -d "$f" ]] || echo "$f"
+## [[ ]] performs conditional expression on $f
+## -d is one of bash's built in evaluators
+## The || keeps echo "$f" from happening if $f is a dir
+## this tecnique keeps out directories
+#do [[ -d "$f" ]] || echo "$f"
+## But this option will just allow regular files
+do [[ -f "$f" ]] && echo "$f"
 done
