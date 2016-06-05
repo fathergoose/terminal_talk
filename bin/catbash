@@ -38,5 +38,11 @@ for ((i=0; i<${#files[*]}; i++))
 do
   echo "file number $i"
   echo -e "\t ${files[i]}"
+  read -n 1 -r
+  if [[ $REPLY =~ ^[j]$ ]]; then
+    echo next
+  elif [[ $REPLY =~ ^[k]$ ]]; then
+    i=$i-2 #previous slide
+  fi
 done
 
