@@ -8,34 +8,12 @@
 clear
 figlet Files
 
-#read -n 1 -r
-#
-#echo 
-#
-#if [[ $REPLY =~ ^[j]$ ]]
-#then
-#echo "next"
-#fi
-
-
-for f in *
-## [[ ]] performs conditional expression on $f
-## -d is one of bash's built in evaluators
-## The || keeps echo "$f" from happening if $f is a dir
-## this tecnique keeps out directories
-#do [[ -d "$f" ]] || echo "$f"
-## But this option will just allow regular files
-do [[ -f "$f" ]] && files+=($f)
+for f in * ; do
+  [ -f "$f" ] && files+=($f)
 done
 
-#for f in ${files[*]}
-#do
-#  echo $f
-#done
-#echo ${files[*]}
 echo ${#files[*]}
-for ((i=0; i<${#files[*]}; i++))
-do
+for ((i=0; i<${#files[*]}; i++)); do
   echo "file number $i"
   echo -e "\t ${files[i]}"
   read -n 1 -r
@@ -43,6 +21,8 @@ do
     echo next
   elif [[ $REPLY =~ ^[k]$ ]]; then
     i=$i-2 #previous slide
+  else
+    i=$i-1 #stay on same slide
   fi
 done
 
