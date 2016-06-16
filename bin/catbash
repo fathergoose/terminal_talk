@@ -15,8 +15,6 @@ done
 echo ${#files[*]}
 for ((i=0; i<${#files[*]}; i++)); do
   echo "file number $i"
-  #echo -e $(${files[i]})
-  # maybe try
   while read -r line; do echo -e $line; done < ${files[i]}
   read -n 1 -r
   if [[ $REPLY =~ ^[j]$ ]]; then
