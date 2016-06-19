@@ -1,2 +1,21 @@
 Introduction
 Default \e[92mLight green
+
+Histroy
+Termanology
+Demo Stuffs
+Introduce the shell
+Shell history
+Anatomy of commands
+Builtins vs coreutils
+Readline
+Expansion I
+Redirection
+Find, grep
+
+
+Scripting
+Grammer
+Expansion II
+
+Alt Shells
