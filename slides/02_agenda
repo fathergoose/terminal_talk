@@ -11,7 +11,7 @@ Builtins vs coreutils
 Readline
 Expansion I
 Redirection
-Find, grep
+Find, grep vs egrepf
 
 
 Scripting
@@ -19,3 +19,5 @@ Grammer
 Expansion II
 
 Alt Shells
+
+MINIMAL LIVE COCDE -- Its for the audience not for you
