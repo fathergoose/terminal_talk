@@ -24,4 +24,5 @@ s.write "\nput\nme\non\na\nnew\nline".encode(Encoding::ASCII)
   - But I can force ASCII for escapes
   - What about unicode escapes?
 -builtins std utils and core UNIX programs
+Add user 
 
